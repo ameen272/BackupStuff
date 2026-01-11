@@ -12,7 +12,6 @@
 
 // Unique features:
 // Accepts both mono and stereo Bytebeats! (Surprisingly, nobody has done this before)
-// I would say it is a good one.
 // Supports multiple sample rates (Use TargetSampleRate)
 // Preserves quality of original signal by deflaut (You can turn it off)
 
@@ -79,7 +78,7 @@ APF = AllPass = (x, Alpha) => (
 Inp=Array.isArray(Inp)?(Inp[0]%256+Inp[1]%256)/256-1:Inp%256/128-1, // Check wether Bytebeat is stereo or mono to handle it correctly.
 
 LpfI=0,
-(PreserveQuantisation?(Init[t%(TargetSampleRate/OrigSampleRate)|0]=Inp,Inp=Init[0]):0), // Crush Bytebeat back to original quality to oreserve sound accuracy.
+(PreserveQuantisation?(Init[t%(TargetSampleRate/OrigSampleRate)|0]=Inp,Inp=Init[0]):0), // Crush Bytebeat back to original quality to preserve sound accuracy.
 
 // Remove DC offsets.
 tInp=Inp-Lpfr(Inp,.005),
